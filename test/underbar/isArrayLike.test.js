@@ -2,14 +2,21 @@ const _ = require('../../underbar');
 
 describe('isArrayLike()', () => {
   it('returns true for an actual array', () => {
-    // Your code goes here
+    const arr = [1, 2];
+    expect(_.isArrayLike(arr)).toBe(true);
   });
 
   it('returns true for an array-like object', () => {
-    // Your code goes here
+    const arrlike = {
+      length: 0
+    }
+    expect(_.isArrayLike(arrlike)).toBe(true);
   });
 
   it('returns false for a non-array-like object', () => {
-    // Your code goes here
+    const obj = {
+      name: 'frank'
+    }
+    expect(_.isArrayLike(obj)).toBe(false);
   });
 });
